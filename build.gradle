@@ -1,13 +1,13 @@
-import javalibrarytemplateplugin.JavaLibraryTemplatePlugin
+import variantdevelopmentplugin.VariantDevelopmentPlugin
 
 plugins {
     id 'java'
     id 'maven-publish'
 }
 
-apply plugin: JavaLibraryTemplatePlugin
+apply plugin: VariantDevelopmentPlugin
 
-group = 'ru.vladislav117.javalibrarytemplate'
+group = 'ru.vladislav117.variant'
 version = '0.0.0'
 
 repositories {
@@ -16,6 +16,7 @@ repositories {
 
 dependencies {
     compileOnly 'org.jetbrains:annotations:26.0.2'
+    implementation 'com.google.code.gson:gson:2.11.0'
 
     testImplementation platform('org.junit:junit-bom:5.13.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'

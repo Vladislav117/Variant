@@ -1,6 +1,6 @@
-# JavaLibraryTemplate
+# Variant
 
-JavaLibraryTemplate - шаблон java-библиотеки.
+Variant - java-библиотека с универсальным объектом, который может как иметь значение примитива (null, boolean, number, string), так и структуры (list, map).
 
 ## Добавление зависимости
 
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.Vladislav117:JavaLibraryTemplate:0.0.0'
+    implementation 'com.github.Vladislav117:Variant:0.0.0'
 }
 ```
 
@@ -28,4 +28,6 @@ dependencies {
 
 ## Использование
 
-Для использования шаблона необходимо адаптировать его.
+```java
+// Будет добавлено позже
+```
