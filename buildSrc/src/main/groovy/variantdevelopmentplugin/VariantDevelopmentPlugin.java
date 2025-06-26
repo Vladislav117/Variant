@@ -10,5 +10,6 @@ import org.jetbrains.annotations.NotNull;
 public class VariantDevelopmentPlugin implements Plugin<Project> {
     @Override
     public void apply(@NotNull Project project) {
+        project.getTasks().register("buildVariantClass", BuildVariantClassTask.class);
     }
 }

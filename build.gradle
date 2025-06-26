@@ -27,6 +27,13 @@ test {
     useJUnitPlatform()
 }
 
+jar {
+    from {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 compileJava.options.encoding = "UTF-8"
 
 javadoc {
