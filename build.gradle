@@ -1,0 +1,41 @@
+import javalibrarytemplateplugin.JavaLibraryTemplatePlugin
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+apply plugin: JavaLibraryTemplatePlugin
+
+group = 'ru.vladislav117.javalibrarytemplate'
+version = '0.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:26.0.2'
+
+    testImplementation platform('org.junit:junit-bom:5.13.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava.options.encoding = "UTF-8"
+
+javadoc {
+    options.encoding = "UTF-8"
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
