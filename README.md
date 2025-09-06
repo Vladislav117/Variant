@@ -1,4 +1,4 @@
-# JavaLibraryTemplate
+# Variant
 
 JavaLibraryTemplate - шаблон java-библиотеки.
 
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.Vladislav117:JavaLibraryTemplate:0.0.0'
+    implementation 'com.github.Vladislav117:Variant:0.0.0'
 }
 ```
 
