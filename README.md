@@ -1,6 +1,7 @@
 # Variant
 
-JavaLibraryTemplate - шаблон java-библиотеки.
+Variant - java-библиотека, содержащая класс Variant.
+Экземпляр Variant - это универсальный объект, который может иметь значение как примитива (null, boolean, number, string), так и структуры (list, map).
 
 ## Добавление зависимости
 
@@ -12,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.Vladislav117:Variant:0.0.0'
+    implementation 'com.github.Vladislav117:Variant:1.0.0'
 }
 ```
 
