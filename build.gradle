@@ -1,0 +1,67 @@
+import javalibrarytemplateplugin.JavaLibraryTemplatePlugin
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'idea'
+}
+
+apply plugin: JavaLibraryTemplatePlugin
+
+// Information
+
+group = 'ru.vladislav117.javalibrarytemplate'
+version = project.projectVersion
+
+// Dependencies
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly 'org.jetbrains:annotations:26.0.2'
+
+    testImplementation platform('org.junit:junit-bom:5.13.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// Compiling
+
+tasks.jar {
+    archiveBaseName.set(project.projectName)
+    archiveVersion.set(project.version.toString())
+}
+
+compileJava.options.encoding = "UTF-8"
+
+javadoc {
+    options.encoding = "UTF-8"
+}
+
+// Testing
+
+test {
+    useJUnitPlatform()
+}
+
+// Publishing
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+// IDE
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
